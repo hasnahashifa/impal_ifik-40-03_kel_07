@@ -1,0 +1,13 @@
+CREATE TABLE Manager (Nama Varchar2(30),divisi Varchar2(15), ID_Manager Varchar2(12), CONSTRAINT Manager_pk PRIMARY KEY (ID_Manager) );
+insert into Manager (Nama,Divisi,ID_Manager) values ('satrio','IT developer','13011078');
+insert into Manager (Nama,Divisi,ID_Manager) values ('wibowo','IT developer','13011079');
+insert into Manager (Nama,Divisi,ID_Manager) values ('candra','IT developer','13011068');
+insert into Manager (Nama,Divisi,ID_Manager) values ('riri R','IT developer','13011077');
+insert into Manager (Nama,Divisi,ID_Manager) values ('haikal','IT developer','13011058');
+
+
+CREATE TABLE Manager (Jumlah_Denda INT, Kode_Denda Varchar2(12), Tipe_Denda Varchar2(10), CONSTRAINT Denda_pk PRIMARY KEY (Kode_Denda) );
+insert into Denda (Jumlah_Denda,Kode_Denda,Tipe_Denda) values (5,'23476','terlambat');
+insert into Denda (Jumlah_Denda,Kode_Denda,Tipe_Denda) values (6,'23467','Absen');
+insert into Denda (Jumlah_Denda,Kode_Denda,Tipe_Denda) values (3,'23489','Absen');
+insert into Denda (Jumlah_Denda,Kode_Denda,Tipe_Denda) values (2,'23490','terlambat');
