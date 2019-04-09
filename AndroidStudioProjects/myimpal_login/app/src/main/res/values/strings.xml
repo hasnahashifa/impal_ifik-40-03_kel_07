@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">myimpal_login</string>
+    <string name="LOGIN">LOGIN</string>
+    <string name="password">password</string>
+    <string name="username">username</string>
+    <string name="verivy">verivy account</string>
+    <string name="HRM">HRM</string>
+    <string name="hr_value">human resource management</string>
+    <string name="passwords">passwords</string>
+    <string name="todo">TODO</string>
+    <string name="logout">logout</string>
+    <string name="view_gaji">view gaji</string>
+    <string name="view_presensi">view presensi</string>
+    <string name="claim_gaji">claim gaji</string>
+    <string name="bayar_gaji">bayar gaji</string>
+    <string name="task_lembur">task lembur</string>
+    <string name="bill_denda">bill denda</string>
+</resources>
