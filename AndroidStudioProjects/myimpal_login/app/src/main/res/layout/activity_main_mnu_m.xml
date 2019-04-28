@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@drawable/background1kpk"
+    tools:context=".menu_manager">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="140dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/task_lembur"
+        android:textColor="@color/colorPrimary"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="?attr/colorControlActivated" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="140dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="525dp"
+        android:text="@string/bill_denda"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        tools:background="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="140dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="397dp"
+        android:text="@string/view_presensi"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        tools:background="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="589dp"
+        android:layout_marginEnd="316dp"
+        android:layout_marginBottom="94dp"
+        android:text="@string/logout"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:background="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="140dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="288dp"
+        android:text="@string/bayar_gaji"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        tools:background="@color/colorAccent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
