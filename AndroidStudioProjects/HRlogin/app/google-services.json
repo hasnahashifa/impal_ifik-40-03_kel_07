@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "460159600001",
+    "firebase_url": "https://hrsystem-c9432.firebaseio.com",
+    "project_id": "hrsystem-c9432",
+    "storage_bucket": "hrsystem-c9432.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460159600001:android:091ae8ded060f578",
+        "android_client_info": {
+          "package_name": "com.example.hrlogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460159600001-2j19ce3dkpeohsbcl6mqi64g8ec5v0gk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hrlogin",
+            "certificate_hash": "379fbb143f82da46c914be2992beaa7cf0a5651c"
+          }
+        },
+        {
+          "client_id": "460159600001-eu4hkj9ge75jqrrjhhksprjdk4biuddg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP5MmYntycuFzyZk3hxW69X889pJgEi8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460159600001-eu4hkj9ge75jqrrjhhksprjdk4biuddg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
