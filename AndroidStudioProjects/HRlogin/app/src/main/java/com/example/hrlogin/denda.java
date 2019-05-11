@@ -5,14 +5,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
 
 public class denda extends AppCompatActivity {
     TextView jumlah;
     TextView kodedenda;
     TextView tipedenda;
     TextView niporNama;
+    FirebaseDatabase db;
+    DatabaseReference dbRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        db = FirebaseDatabase.getInstance();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_denda);
     }
