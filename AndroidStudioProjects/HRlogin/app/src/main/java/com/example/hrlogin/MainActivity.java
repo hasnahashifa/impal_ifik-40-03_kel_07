@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
     public static Boolean Notnull(String username, String pass){
         Boolean bool;
         if(username.equals("")||pass.equals("")){
-            bool=true;
+            bool=false;
             return bool;
         }else{
-            bool=false;
+            bool=true;
             return bool;
 
         }
@@ -55,49 +55,48 @@ public class MainActivity extends AppCompatActivity {
         dbRef = db.getReference().child("pegawai").child(user);
         String tampung2;
         Log.e("select err", "Login: "+dbRef.toString() );
-        dbRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.getKey().equals(user) && dataSnapshot.getValue()!=null) {
-                    DbUser = true;
-                    DataSnapshot dataSnapshot1= dataSnapshot.child("pass");
-                    Log.e("datasnap", "onDataChange: "+dataSnapshot1.toString() );
-                    String tampung1=dataSnapshot1.getValue().toString();
-                    if(pass.equals(tampung1)){
-                        Dbpass=true;
-                        dataSnapshot1= dataSnapshot.child("jabatan");
-                        tampung1 = dataSnapshot1.getValue().toString();
-                        if(("manager").equals(tampung1)){
-                            Dbjabatan=true;
+        if(Notnull(user,pass)) {
+
+
+            dbRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.getKey().equals(user) && dataSnapshot.getValue() != null) {
+                        DbUser = true;
+                        DataSnapshot dataSnapshot1 = dataSnapshot.child("pass");
+                        Log.e("datasnap", "onDataChange: " + dataSnapshot1.toString());
+                        String tampung1 = dataSnapshot1.getValue().toString();
+                        if (pass.equals(tampung1)) {
+                            Dbpass = true;
+                            dataSnapshot1 = dataSnapshot.child("jabatan");
+                            tampung1 = dataSnapshot1.getValue().toString();
+                            if (("manager").equals(tampung1)) {
+                                Dbjabatan = true;
+                            }
                         }
+
+                    }
+                    Log.e("show err", "onDataChange: " + dataSnapshot.toString());
+                    if (DbUser && Dbpass && Dbjabatan) {
+                        Intent intent = new Intent(MainActivity.this, mainMenuManager.class);
+                        startActivity(intent);
+                    } else if (DbUser && Dbpass) {
+                        Intent intent = new Intent(MainActivity.this, mainmenuPegawai.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent);
                     }
 
                 }
-                Log.e("show err" ,"onDataChange: "+dataSnapshot.toString() );
-                if( DbUser && Dbpass && Dbjabatan){
-                    Intent intent = new Intent(MainActivity.this,mainMenuManager.class);
-                    startActivity(intent);
-                } else if(DbUser && Dbpass ){
-                    Intent intent =new Intent(MainActivity.this,mainmenuPegawai.class);
-                    startActivity(intent);
-                }else{
-                    Intent intent =new Intent(MainActivity.this,MainActivity.class);
-                    startActivity(intent);
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
                 }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        if(Notnull(user,pass)){
-
-
-
+            });
         }
+
 
 
         }
