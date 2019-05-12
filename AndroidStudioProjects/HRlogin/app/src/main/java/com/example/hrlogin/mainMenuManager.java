@@ -52,11 +52,13 @@ public class mainMenuManager extends AppCompatActivity {
             Log.e("select err", "Login: "+dbRef.toString() );
             String date = "12 agustus 2019";
             dbRef.child(data).child(date).setValue("hadir");
+            Intent intent = new Intent(mainMenuManager.this,presensiManager.class);
+            intent.putExtra("User",data);
+            startActivity(intent);
         }
 
 
-        Intent intent = new Intent(mainMenuManager.this,presensiManager.class);
-        startActivity(intent);
+
     }
 
     public void inputGaji(View view) {
