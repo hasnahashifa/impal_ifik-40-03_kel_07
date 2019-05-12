@@ -25,7 +25,7 @@
         tools:targetApi="o" />
 
     <EditText
-        android:id="@+id/kodeL"
+        android:id="@+id/TipeL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
@@ -54,7 +54,7 @@
         android:inputType="textPersonName"
         android:text="@string/kode_lembur"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kodeL"
+        app:layout_constraintTop_toBottomOf="@+id/TipeL"
         tools:targetApi="o" />
 
     <EditText
