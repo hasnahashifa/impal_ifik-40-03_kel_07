@@ -57,11 +57,11 @@ public class inputGaji extends AppCompatActivity {
             }
 
 
-            dbRef.child(Kodegaji1);
-            dbRef.child(Kodegaji1).child("namaornip").setValue(Nama1);
-            dbRef.child(Kodegaji1).child("keterangan").setValue(Keterangan1);
-            dbRef.child(Kodegaji1).child("status").setValue("tersedia");
-            dbRef.child(Kodegaji1).child("jumlah").setValue(jumlah);
+            dbRef.child(Nama1);
+            dbRef.child(Nama1).child(Kodegaji1);
+            dbRef.child(Nama1).child(Kodegaji1).child("keterangan").setValue(Keterangan1);
+            dbRef.child(Nama1).child(Kodegaji1).child("status").setValue("tersedia");
+            dbRef.child(Nama1).child(Kodegaji1).child("jumlah").setValue(jumlah);
             Intent intent = new Intent(inputGaji.this, mainMenuManager.class);
             startActivity(intent);
         }else{
