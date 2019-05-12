@@ -40,10 +40,12 @@ public class mainmenuPegawai extends AppCompatActivity {
             Log.e("select err", "Login: "+dbRef.toString() );
             String date = "12 agustus 2019";
             dbRef.child(data).child(date).setValue("hadir");
+            Intent intent = new Intent(mainmenuPegawai.this,mainmenuPegawai.class);
+            intent.putExtra("User",data)
+            startActivity(intent);
         }
 
-        Intent intent = new Intent(mainmenuPegawai.this,viewPresensi.class);
-        startActivity(intent);
+
     }
     public void ViewGaji(View view) {
         Intent intent = new Intent(mainmenuPegawai.this,viewGaji.class);
