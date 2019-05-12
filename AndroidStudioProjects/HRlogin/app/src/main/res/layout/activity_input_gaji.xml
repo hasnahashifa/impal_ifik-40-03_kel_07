@@ -84,6 +84,7 @@
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
         android:layout_marginBottom="80dp"
+        android:onClick="input"
         android:text="@string/input"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
