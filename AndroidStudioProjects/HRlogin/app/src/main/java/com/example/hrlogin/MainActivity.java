@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import java.text.SimpleDateFormat;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,9 +18,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     TextView username1;
+
     TextView pass1;
     FirebaseDatabase db;
-    DatabaseReference dbRef;
+    DatabaseReference dbRef,dbRef1;
     public boolean DbUser;
     public boolean Dbpass;
     public boolean Dbjabatan;
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         dbRef = db.getReference().child("pegawai").child(user);
         String tampung2;
         Log.e("select err", "Login: "+dbRef.toString() );
+        dbRef1=db.getReference().child("absen");
         if(Notnull(user,pass)) {
 
 
@@ -75,18 +78,25 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
 
+
                     }
                     Log.e("show err", "onDataChange: " + dataSnapshot.toString());
                     if (DbUser && Dbpass && Dbjabatan) {
+
                         Intent intent = new Intent(MainActivity.this, mainMenuManager.class);
+                        intent.putExtra("User",user);
                         startActivity(intent);
                     } else if (DbUser && Dbpass) {
+
                         Intent intent = new Intent(MainActivity.this, mainmenuPegawai.class);
+                        intent.putExtra("User",user);
                         startActivity(intent);
                     } else {
                         Intent intent = new Intent(MainActivity.this, MainActivity.class);
                         startActivity(intent);
                     }
+
+
 
                 }
 
