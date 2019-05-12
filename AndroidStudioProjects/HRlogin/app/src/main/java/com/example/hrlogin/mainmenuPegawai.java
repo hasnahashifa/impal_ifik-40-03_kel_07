@@ -27,8 +27,17 @@ public class mainmenuPegawai extends AppCompatActivity {
 
 
     public void claimgaji(View view) {
-        Intent intent = new Intent(mainmenuPegawai.this,claimGaji.class);
-        startActivity(intent);
+        Intent intent1 = getIntent();
+        Bundle extras = intent1.getExtras();
+        String data;
+        if(extras != null){
+            data= extras.getString("User");
+            Intent intent = new Intent(mainmenuPegawai.this,claimGaji.class);
+            intent.putExtra("User",data);
+            startActivity(intent);
+        }
+
+
     }
     public void View(View view) {
         Intent intent1 = getIntent();
@@ -41,7 +50,7 @@ public class mainmenuPegawai extends AppCompatActivity {
             String date = "12 agustus 2019";
             dbRef.child(data).child(date).setValue("hadir");
             Intent intent = new Intent(mainmenuPegawai.this,mainmenuPegawai.class);
-            intent.putExtra("User",data)
+            intent.putExtra("User",data);
             startActivity(intent);
         }
 
