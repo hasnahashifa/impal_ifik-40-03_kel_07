@@ -26,6 +26,7 @@ public class inputGaji extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        db = FirebaseDatabase.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_gaji);
     }
@@ -40,18 +41,29 @@ public class inputGaji extends AppCompatActivity {
         kodegaji =findViewById(R.id.kodeL);
         keterangan = findViewById(R.id.keterangan);
         dbRef= db.getReference().child("Gaji");
+
         Log.e("select err", "Login: "+dbRef.toString() );
-        String Nama = nama.getText().toString();
-        String Kodegaji = kodegaji.getText().toString();
-        String Keterangan = keterangan.getText().toString();
-        if(isnull(Nama, Kodegaji, Keterangan )) {
+        String Nama1 = nama.getText().toString();
+        String Kodegaji1 = kodegaji.getText().toString();
+        String Keterangan1 = keterangan.getText().toString();
+        String jumlah;
+        if(isnull(Nama1, Kodegaji1, Keterangan1 )) {
+            if (Keterangan1.equals("gaji bulanan")){
+                jumlah="3500000";
+            }else if(Keterangan1.equals("THR")||Keterangan1.equals("thr")){
+                jumlah="4500000";
+            }else {
+                jumlah="500000";
+            }
+
+
+            dbRef.child(Kodegaji1);
+            dbRef.child(Kodegaji1).child("namaornip").setValue(Nama1);
+            dbRef.child(Kodegaji1).child("keterangan").setValue(Keterangan1);
+            dbRef.child(Kodegaji1).child("status").setValue("tersedia");
+            dbRef.child(Kodegaji1).child("jumlah").setValue(jumlah);
             Intent intent = new Intent(inputGaji.this, mainMenuManager.class);
             startActivity(intent);
-            String key = dbRef.push().getKey();
-            dbRef.child(Kodegaji);
-            dbRef.child(Kodegaji).child("namaornip").setValue(Nama);
-            dbRef.child(Kodegaji).child("keterangan").setValue(Keterangan);
-            dbRef.child(Kodegaji).child("status").setValue("tersedia");
         }else{
 
         }
