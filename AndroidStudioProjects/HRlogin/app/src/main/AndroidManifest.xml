@@ -9,14 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presensiManager"></activity>
         <activity android:name=".viewGaji" />
         <activity android:name=".inputGaji" />
         <activity android:name=".lembur" />
         <activity android:name=".denda" />
         <activity android:name=".claimGaji" />
         <activity android:name=".bayarGaji" />
-        <activity android:name=".viewPresensi" />
         <activity android:name=".mainMenuManager" />
         <activity android:name=".mainmenuPegawai" />
         <activity android:name=".MainActivity">
