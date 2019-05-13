@@ -44,4 +44,8 @@
     <string name="kode_gaji">kode gaji</string>
     <string name="input_keterangan">input keterangan</string>
     <string name="keterangan">keterangan</string>
+    <string name="gaji">gaji</string>
+    <string name="textview">TextView</string>
+    <string name="kosong" />
+    <string name="show">show</string>
 </resources>
