@@ -33,15 +33,9 @@ public class bayarGaji extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void bayar(View view) {
-        TextView nip= findViewById(R.id.username);
-        TextView norek= findViewById(R.id.noRek);
-        String rek=norek.getText().toString();
-
-
-        String Nip= nip.getText().toString();
-        dbRef=db.getReference().child("Gaji").child(Nip);
-
+    public void delete(String Nip ) {
+        DatabaseReference dbRef=db.getReference().child("Gaji").child(Nip);
+        dbRef.removeValue();
 
 
 
@@ -64,7 +58,8 @@ public class bayarGaji extends AppCompatActivity {
                     String data = dataSnapshot.child(Nip).child("no rek").getValue().toString();
                     tampung=data;
                     norek.setText(tampung);
-                    dbRef.removeValue();
+                    delete(Nip);
+
 
                 }else{
                     Intent intent = new Intent(bayarGaji.this,bayarGaji.class);
