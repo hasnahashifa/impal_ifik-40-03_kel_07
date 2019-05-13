@@ -52,10 +52,10 @@ public class denda extends AppCompatActivity {
             Intent intent = new Intent(denda.this, mainMenuManager.class);
             startActivity(intent);
             String key = dbRef.push().getKey();
-            dbRef.child(Kodedenda1);
-            dbRef.child(Kodedenda1).child("namaornip").setValue(nipornama1);
-            dbRef.child(Kodedenda1).child("jumlah").setValue(jumlah1);
-            dbRef.child(Kodedenda1).child("tipe").setValue(tipedenda1);
+            dbRef.child(nipornama1);
+            dbRef.child(nipornama1).child("kode").setValue(Kodedenda1);
+            dbRef.child(nipornama1).child("jumlah").setValue(jumlah1);
+            dbRef.child(nipornama1).child("tipe").setValue(tipedenda1);
         }else{
 
         }
