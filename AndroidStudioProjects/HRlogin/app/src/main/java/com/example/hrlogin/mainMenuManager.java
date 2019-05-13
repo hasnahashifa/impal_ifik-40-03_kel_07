@@ -28,6 +28,7 @@ public class mainMenuManager extends AppCompatActivity {
         startActivity(intent);
     }
     public void openbayar(View view) {
+
         Intent intent = new Intent(mainMenuManager.this,bayarGaji.class);
         startActivity(intent);
     }
