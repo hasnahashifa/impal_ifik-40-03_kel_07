@@ -7,8 +7,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MainActivityloginTest {
-    String user="1";
-    String pass="2";
+    String user="";
+    String pass="";
 
     @Test
     public void login() {
@@ -16,8 +16,5 @@ public class MainActivityloginTest {
 
     }
 
-    @Test
-    public void konfirmresr() {
-        assertTrue(MainActivity.konfirm(pass,user));
-    }
+
 }
