@@ -39,32 +39,7 @@ public class viewGaji extends AppCompatActivity {
         startActivity(intent);
     }
     public void show(View view) {
-        Intent intent1 = getIntent();
-        final TextView Gaji= findViewById(R.id.gaji);
-        final TextView denda= findViewById(R.id.denda);
-        final TextView lembur= findViewById(R.id.lembur);
 
-
-
-
-        dbRef=db.getReference().child("Gaji").child("1B23A");
-        Log.e("bayarerr", "bayar: " + dbRef.getKey());
-
-            dbRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    String data1 = dataSnapshot.child("jumlah").getValue().toString();
-                    Gaji.setText(data1);
-
-
-                }
-
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
 
     }
 }
