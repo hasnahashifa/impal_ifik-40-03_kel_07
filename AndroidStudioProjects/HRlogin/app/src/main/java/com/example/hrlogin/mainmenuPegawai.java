@@ -57,7 +57,14 @@ public class mainmenuPegawai extends AppCompatActivity {
 
     }
     public void ViewGaji(View view) {
-        Intent intent = new Intent(mainmenuPegawai.this,viewGaji.class);
-        startActivity(intent);
+        Intent intent1 = getIntent();
+        Bundle extras = intent1.getExtras();
+        String data;
+        if(extras != null) {
+            data = extras.getString("User");
+            Intent intent = new Intent(mainmenuPegawai.this, viewGaji.class);
+            intent.putExtra("User",data);
+            startActivity(intent);
+        }
     }
 }
