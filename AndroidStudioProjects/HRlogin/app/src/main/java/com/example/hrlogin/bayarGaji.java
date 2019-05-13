@@ -43,46 +43,57 @@ public class bayarGaji extends AppCompatActivity {
 
 
     }
+    public void  gajishow(String data, final TextView view){
+        DatabaseReference Dbref =db.getReference().child("Gaji").child(data).child("no rek");
+        String txt;
+        Dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                    String data1 = dataSnapshot.getValue().toString();
+
+                    view.setText(data1);
+
+
+
+
+
+
+
+
+
+
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        String val = view.getText().toString();
+    }
 
     public void search(View view) {
         final TextView norek= findViewById(R.id.noRek);
         TextView nip= findViewById(R.id.username);
         final String Nip= nip.getText().toString();
 
-        dbRef = db.getReference().child("Gaji");
-        Log.e("bayarerr", "bayar: "+dbRef.getKey() );
-        dbRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child(Nip).child("no rek").getValue() != null){
-                    String data = dataSnapshot.child(Nip).child("no rek").getValue().toString();
-                    tampung=data;
-                    norek.setText(tampung);
-                    delete(Nip);
+        gajishow(Nip,norek);
 
-
-                }else{
-                    Intent intent = new Intent(bayarGaji.this,bayarGaji.class);
-                    startActivity(intent);
-
-                }
-
-
-
-
-
-            }
-
-
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
 
         }
+    public void bayar(View view) {
+        final TextView norek= findViewById(R.id.noRek);
+        TextView nip= findViewById(R.id.username);
+        final String Nip= nip.getText().toString();
+
+        
+        delete(Nip);
+
+
+    }
 
 
     }
