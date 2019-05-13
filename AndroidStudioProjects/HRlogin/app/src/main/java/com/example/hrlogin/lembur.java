@@ -19,6 +19,7 @@ public class lembur extends AppCompatActivity {
     FirebaseDatabase db;
     DatabaseReference dbRef;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         db = FirebaseDatabase.getInstance();
@@ -47,10 +48,10 @@ public class lembur extends AppCompatActivity {
             Intent intent = new Intent(lembur.this, mainMenuManager.class);
             startActivity(intent);
             String key = dbRef.push().getKey();
-            dbRef.child(Kodelembur1);
-            dbRef.child(Kodelembur1).child("namaornip").setValue(nipornama1);
-            dbRef.child(Kodelembur1).child("jumlah").setValue(jumlah1);
-            dbRef.child(Kodelembur1).child("tipe").setValue(tipeLembur1);
+            dbRef.child(nipornama1);
+            dbRef.child(nipornama1).child("kode").setValue(Kodelembur1);
+            dbRef.child(nipornama1).child("jumlah").setValue(jumlah1);
+            dbRef.child(nipornama1).child("tipe").setValue(tipeLembur1);
         }else{
 
         }
