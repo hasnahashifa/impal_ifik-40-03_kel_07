@@ -62,11 +62,7 @@ public class mainmenuPegawai extends AppCompatActivity {
         String data;
         if(extras != null) {
             data = extras.getString("User");
-            dbRef= db.getReference().child("absen");
-            Log.e("select err", "Login: "+dbRef.toString() );
-            String date = "12 agustus 2019";
-            dbRef.child(data).child(date).setValue("hadir");
-            Intent intent = new Intent(mainmenuPegawai.this, mainmenuPegawai.class);
+            Intent intent = new Intent(mainmenuPegawai.this,claimGaji.class);
             intent.putExtra("User",data);
             startActivity(intent);
         }
