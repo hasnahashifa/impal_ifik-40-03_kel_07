@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/no_rek"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bckground1kpk"
@@ -13,8 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="76dp"
         android:autofillHints="yes"
         android:ems="10"
         android:hint="@string/input_nip"
@@ -22,27 +23,10 @@
         android:text="@string/nip"
         android:textAlignment="center"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" tools:targetApi="o"/>
-
-    <EditText
-        android:id="@+id/pass"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="252dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/input_no_req"
-        android:inputType="textPersonName"
-        android:text="@string/no_rekening"
-        android:textAlignment="center"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" tools:targetApi="o"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:targetApi="o" />
 
     <TextView
         android:id="@+id/textView"
@@ -78,17 +62,49 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/bayar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="61dp"
-        android:text="@string/bayar"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="60dp"
+        android:onClick="search"
+        android:text="@android:string/search_go"
         android:textAlignment="center"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/noRek"
+        android:layout_width="218dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/kosong"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        tools:text="@string/no_rekening" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="60dp"
+        android:onClick="bayar"
+        android:text="@string/bayar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bayar"
+        app:layout_constraintHorizontal_bias="0.232"
         app:layout_constraintStart_toEndOf="@+id/button" />
 
 </android.support.constraint.ConstraintLayout>
