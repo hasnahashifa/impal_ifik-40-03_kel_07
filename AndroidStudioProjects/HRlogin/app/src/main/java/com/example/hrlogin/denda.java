@@ -43,6 +43,7 @@ public class denda extends AppCompatActivity {
         tipedenda = findViewById(R.id.keterangan);
         niporNama =findViewById(R.id.nipnamapeg);
         dbRef= db.getReference().child("Denda");
+
         Log.e("select err", "Login: "+dbRef.toString() );
         String jumlah1 = jumlah.getText().toString();
         String Kodedenda1 = kodedenda.getText().toString();
